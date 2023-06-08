@@ -1,7 +1,7 @@
 import subprocess
 from boltdb import BoltDB
 
-def execute_airodump_ng():
+def exe_airodump_ng():
     try:
         output = subprocess.check_output(['airodump-ng', '--verbose'])
         result = output.decode('utf-8')
@@ -16,4 +16,4 @@ def execute_airodump_ng():
         print("Error executing airodump-ng or saving results:", str(e))
 
 if __name__ == "__main__":
-    execute_airodump_ng()
+    exe_airodump_ng()
