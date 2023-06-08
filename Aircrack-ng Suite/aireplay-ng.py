@@ -1,7 +1,7 @@
 import subprocess
 from boltdb import BoltDB
 
-def execute_aireplay_ng():
+def exe_aireplay_ng():
     try:
         output = subprocess.check_output(['aireplay-ng', '-v'])
         result = output.decode('utf-8')
@@ -11,9 +11,9 @@ def execute_aireplay_ng():
         db.insert("Aireplay-ng-results", result)
         db.commit()
         db.close()
-        print("Aireplay-ng results saved to BoltDB successfully.")
+        print("Aireplay results saved successfully.")
     except Exception as e:
         print("Error executing aireplay-ng or saving results:", str(e))
 
 if __name__ == "__main__":
-    execute_aireplay_ng()
+    exe_aireplay_ng()
