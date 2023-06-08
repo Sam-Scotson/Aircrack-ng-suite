@@ -1,7 +1,7 @@
 import subprocess
 from boltdb import BoltDB
 
-def execute_airmon_ng():
+def exe_airmon_ng():
     try:
         output = subprocess.check_output(['airmon-ng', '-v'])
         result = output.decode('utf-8')
@@ -11,9 +11,9 @@ def execute_airmon_ng():
         db.insert("Airmon-ng-results", result)
         db.commit()
         db.close()
-        print("Airmon-ng results saved to BoltDB successfully.")
+        print("Airmon results saved successfully.")
     except Exception as e:
         print("Error executing airmon-ng or saving results:", str(e))
 
 if __name__ == "__main__":
-    execute_airmon_ng()
+    exe_airmon_ng()
