@@ -1,7 +1,7 @@
 import subprocess
 from boltdb import BoltDB
 
-def execute_aircrack_ng():
+def exe_aircrack_ng():
     try:
         output = subprocess.check_output(['aircrack-ng', '-v'])
         result = output.decode('utf-8')
@@ -11,9 +11,9 @@ def execute_aircrack_ng():
         db.insert("Aircrack-ng-results", result)
         db.commit()
         db.close()
-        print("Aircrack-ng results saved to BoltDB successfully.")
+        print("Aircrack results saved successfully.")
     except Exception as e:
         print("Error executing aircrack-ng or saving results:", str(e))
 
 if __name__ == "__main__":
-    execute_aircrack_ng()
+    exe_aircrack_ng()
